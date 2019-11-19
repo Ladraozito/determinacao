@@ -1,0 +1,5 @@
+program Plaplace;
+
+begin
+end.
+
