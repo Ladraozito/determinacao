@@ -5,6 +5,7 @@ módulos para calcular daterminantes de matrizes com ordem maior do que 3
 
 ### clonar o repositório
 `git clone https://github.com/Ladraozito/determinacao.git`
+
 `cd determinacao`
 
 ### criar novo branch
@@ -15,7 +16,9 @@ módulos para calcular daterminantes de matrizes com ordem maior do que 3
 
 ### enviar modificações
 `git add .`
+
 `git commit -m "resumo das alterações"`
+
 `git push origin nome-do-branch`
 
 ## Extras
