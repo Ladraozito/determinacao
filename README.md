@@ -1,12 +1,12 @@
 # determinacao
-módulos para calcular determinantes de matrizes com ordem maior do que 3
+módulos para calcular determinantes de matrizes com ordem maior do que 3.
 
 ## Instruções
 
 ### clonar o repositório
-`git clone https://github.com/Ladraozito/determinacao.git`
+Para clonar o repositório use o comando `git clone https://github.com/Ladraozito/determinacao.git`, ele gerará uma pasta com os arquivos do repositório dentro.
 
-`cd determinacao`
+Para entrar na pasta via terminal use `cd determinacao`.
 
 ### criar novo branch
 `git branch nome-do-branch`
@@ -15,20 +15,20 @@ módulos para calcular determinantes de matrizes com ordem maior do que 3
 `git checkout nome-do-branch`
 
 ### enviar modificações
-`git add .`
+`git add .` para selecionar os arquivos para comitar.
 
-`git commit -m "resumo das alterações"`
+`git commit -m "resume as alterações"` para comitar.
 
-`git push origin nome-do-branch`
+`git push origin nome-do-branch` para enviar os arquivos para o repositório remoto no GitHub.
 
 ## Extras
 
 ### receber modificações
-`git push`
+Se precisar receber alguma modificação ou quiser ver as alterações de um branch, você pode alterar para o branch desejado e usar o comando `git push`.
 
 ### verificar situação
 `git status`
 
 ### vareficar branchs locais
-`git branch`
+`git branch` mostra os seus branchs locais da máquina.
 
