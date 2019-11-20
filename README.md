@@ -1,5 +1,5 @@
 # determinacao
-módulos para calcular daterminantes de matrizes com ordem maior do que 3
+módulos para calcular determinantes de matrizes com ordem maior do que 3
 
 ## Instruções
 
