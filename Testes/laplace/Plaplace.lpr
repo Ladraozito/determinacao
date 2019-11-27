@@ -2,21 +2,20 @@
 program Plaplace;
 uses crt;
   const
-    MaxI = 5;
-    MaxJ = 5;
+    Max = 5;
   var
-    Matr: array [1..MaxI,1..MaxJ] of integer;
+    Matr: array [1..Max,1..Max] of integer;
     I, J, Ipergunt, numI: integer;
     {Ipergunt = pergunta qual linha o usuário quer "eliminar"}
 begin
   numI:= 0;
-  for I:= 1 to MaxI do
+  for I:= 1 to Max do
     begin
-      for J:= 1 to MaxJ do
+      for J:= 1 to Max do
         begin
-          Matr[I,J]:= random(MaxI * MaxJ);
+          Matr[I,J]:= random(Max * Max);
           write(Matr[I,J],' ');
-            if J = MaxJ then
+            if J = Max then
               write(Matr[I,J],' |Linha .',numI);
         end;
       writeln;
