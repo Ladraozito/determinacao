@@ -4,7 +4,7 @@ uses crt;
   const
     Max = 5;
   var
-    Matr: array [1..Max,1..Max] of integer;
+    Matriz: array[1..Max,1..Max] of integer;
     I, J, Ipergunt, numI: integer;
     {Ipergunt = pergunta qual linha o usuário quer "eliminar"}
 begin
@@ -13,10 +13,10 @@ begin
     begin
       for J:= 1 to Max do
         begin
-          Matr[I,J]:= random(Max * Max);
-          write(Matr[I,J],' ');
+          Matriz[I,J]:= random(Max * Max);
+          write(Matriz[I,J],' ');
             if J = Max then
-              write(Matr[I,J],' |Linha .',numI);
+              write(Matriz[I,J],' |Linha .',numI);
         end;
       writeln;
       inc(numI);
