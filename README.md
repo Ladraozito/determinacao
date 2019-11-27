@@ -32,3 +32,10 @@ Se precisar receber alguma modificação ou quiser ver as alterações de um bra
 ### vareficar branchs locais
 `git branch` mostra os seus branchs locais da máquina.
 
+## Lazarus no Linux
+Caso você esteja usando o Lazarus no Linux e não conseguir executar o programa tente seguir estes passos:
+
+1. Verifique se na primeira do programa está escrito `{%RunCommand gnome-terminal -e $(TargetFile)}`
+2. Clique em Executar
+3. Clique em Executar arquivo
+
