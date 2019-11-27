@@ -1,5 +1,6 @@
-# Determinação
+# Determinação 👑
 Programa para calcular determinantes de matrizes com ordem maior do que 3.
+**Faça um bom trabalho** 👩‍💻
 
 ## Instruções
 
