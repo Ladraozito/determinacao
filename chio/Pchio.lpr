@@ -1,5 +1,0 @@
-program Pchio;
-
-begin
-end.
-
