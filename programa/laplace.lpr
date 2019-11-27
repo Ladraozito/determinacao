@@ -1,0 +1,5 @@
+program laplace;
+
+begin
+end.
+
