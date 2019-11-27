@@ -1,20 +1,20 @@
-# determinacao
-programas para calcular determinantes de matrizes com ordem maior do que 3.
+# Determinação
+Programa para calcular determinantes de matrizes com ordem maior do que 3.
 
 ## Instruções
 
-### clonar o repositório
-Para clonar o repositório use o comando `git clone https://github.com/Ladraozito/determinacao.git`, ele gerará uma pasta com os arquivos do repositório dentro.
+### Clonar o repositório
+`git clone https://github.com/Ladraozito/determinacao.git`
 
-Para entrar na pasta via terminal use `cd determinacao`.
+`cd determinacao`
 
-### criar novo branch
+### Criar novo branch
 `git branch nome-do-branch`
 
-### mudar de branch
+### Mudar de branch
 `git checkout nome-do-branch`
 
-### enviar modificações
+### Enviar modificações
 `git add .` para selecionar os arquivos para comitar.
 
 `git commit -m "resume as alterações"` para comitar.
@@ -23,13 +23,13 @@ Para entrar na pasta via terminal use `cd determinacao`.
 
 ## Extras
 
-### receber modificações
+### Receber modificações
 Se precisar receber alguma modificação ou quiser ver as alterações de um branch, você pode alterar para o branch desejado e usar o comando `git push`.
 
-### verificar situação
+### Verificar situação
 `git status`
 
-### vareficar branchs locais
+### Verificar branchs locais
 `git branch` mostra os seus branchs locais da máquina.
 
 ## Lazarus no Linux
