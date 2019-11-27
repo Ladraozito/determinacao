@@ -1,11 +1,11 @@
 {%RunCommand gnome-terminal -e $(TargetFile)}
 program Plaplace;
 uses crt;
-  const
-    Max = 5;
-  var
-    Matriz: array[1..Max,1..Max] of integer;
-    I, J, Ipergunt, numI: integer;
+const
+  Max = 5;
+var
+  Matriz: array[1..Max,1..Max] of integer;
+  I, J, Ipergunt, numI: integer;
 begin
   numI:= 0;
   for I:= 1 to Max do
