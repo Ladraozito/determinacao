@@ -6,7 +6,6 @@ uses crt;
   var
     Matriz: array[1..Max,1..Max] of integer;
     I, J, Ipergunt, numI: integer;
-    {Ipergunt = pergunta qual linha o usuário quer "eliminar"}
 begin
   numI:= 0;
   for I:= 1 to Max do
