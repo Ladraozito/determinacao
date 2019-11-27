@@ -6,8 +6,7 @@ uses crt;
   var
     Matr: array [1..MaxI,1..MaxJ] of integer;
     I, J, Ipergunt, numI: integer;
-      {Ipergunt = pergunta qual linha o usuário quer "eliminar"}
-
+    {Ipergunt = pergunta qual linha o usuário quer "eliminar"}
 begin
   numI:= 0;
   for I:= 1 to MaxI do
@@ -27,9 +26,7 @@ begin
   writeln('Ex: "2" = Linha 2');
   readln(Ipergunt);
   clrscr;
-  writeln('Voce escolheu a linha ', Ipergunt
-  );
+  writeln('Voce escolheu a linha ', Ipergunt);
   readln;
-
 end.
 
