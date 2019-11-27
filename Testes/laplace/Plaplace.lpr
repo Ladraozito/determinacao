@@ -1,3 +1,4 @@
+{%RunCommand gnome-terminal -e $(TargetFile)}
 program Plaplace;
 uses crt;
   const
