@@ -1,5 +1,0 @@
-program Psarrus;
-
-begin
-end.
-
