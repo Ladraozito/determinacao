@@ -7,6 +7,7 @@ var
   Matriz: array [1..Max,1..Max] of integer;
   linha, coluna, escolhida, contador: integer;
 begin
+  randomize;
   contador := 0;
   for linha := 1 to Max do
     begin
