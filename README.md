@@ -1,42 +1,75 @@
-# Determinação 👑
-Programa para calcular determinantes de matrizes com ordem maior do que 3.
-**Faça um bom trabalho, ou tente...** 👩‍💻
+# Determinantes
+Programa escrito em Pascal para calcular determinantes de matrizes com ordem maior do que 3, utilizando a regra de Laplace.
 
 ## Instruções
 
-### Clonar o repositório
-`git clone https://github.com/Ladraozito/determinacao.git`
-
-`cd determinacao`
-
-### Criar novo branch
+### Crie uma branch
 `git branch nome-do-branch`
 
-### Mudar de branch
 `git checkout nome-do-branch`
 
-### Enviar modificações
-`git add .` para selecionar os arquivos para comitar.
+### Envie as modificações
+`git add .`
 
-`git commit -m "resume as alterações"` para comitar.
+`git commit -m "resume as alterações"`
 
-`git push origin nome-do-branch` para enviar os arquivos para o repositório remoto no GitHub.
+`git push origin nome-do-branch`
 
-## Extras
+Quem sabe mais sobre Git, sabe, quem não sabe, não sabe
+Quem sabe executar Pascal no Linux, sabe, quem não sabe, não sabe
+:)
 
-### Receber modificações
-Se precisar receber alguma modificação ou quiser ver as alterações de um branch, você pode alterar para o branch desejado e usar o comando `git push`.
+## Laplace
+Considere:
 
-### Verificar situação
-`git status`
+|||||
+--- | --- | --- | ---
+3 | 1 | 0 | 1
+0 | -1 | 3 | 4
+1 | 1 | 0 | 2
+0 | 1 | 1 | -1
 
-### Verificar branchs locais
-`git branch` mostra os seus branchs locais da máquina.
 
-## Lazarus no Linux
-Caso você esteja usando o Lazarus no Linux e não conseguir executar o programa tente seguir estes passos:
+Escolha uma linha ou coluna: 
+    
+    [3, 1, 0, 1]
 
-1. Verifique se na primeira do programa está escrito `{%RunCommand gnome-terminal -e $(TargetFile)}`
-2. Clique em Executar
-3. Clique em Executar arquivo
+Multiplique e some cada elemento pelo seu cofator `ij * Cij`:
+    
+    (3 * C11) + (1 * C12) + (0 * C13) + (1 * C14)
 
+Calcule o cofator pela mutliplicação da exponenciação e do menor complementar `Power(-1, i+j) * Dij`:
+
+    C11 = Power(-1, i+j) * Dij
+    C11 = Power(-1, 1+1) * D11
+    C11 = Power(-1, 2) * D11
+    C11 = 1 * D11
+
+    ...
+
+Calcule o menor complementar. Elimine as filas `ij` da matriz e deixe o que sobrou:
+
+    D11 = [-1, 3, 4
+            1, 0, 2
+            1, 1, -1]
+
+    ...
+
+Agora é necessário aplicar a regra de `Sarrus`, duplicando as duas primeiras colunas e multiplicando daquele jeitinho lá :)
+
+     D11 = | -1, 3,  4 | -1 3
+           |  1, 0,  2 |  1 0
+           |  1, 1, -1 |  1 1
+
+    D11 = (0 + 6 + 4) - (0 - 2 - 3)
+    D11 = 10 - (-5)
+    D11 = 15
+
+    ...
+
+Lembre-se que estamos resolvendo aqui:
+
+    (3 * C11) + (1 * C12) + (0 * C13) + (1 * C14)
+    
+Isso é o suficiente para resolver o determinante da matriz proposta.
+Nesse caso, a resposta deve ser **34**.
