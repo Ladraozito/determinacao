@@ -14,9 +14,9 @@ begin
       for coluna := 1 to Max do
         begin
           Matriz[linha, coluna] := random(Max * Max);
-          write(Matriz[linha, coluna],' ');
+          write(Matriz[linha, coluna]:3);
           if coluna = Max then
-            write(Matriz[linha, coluna],' |Linha .',contador);
+            write('|Linha ', contador);
         end;
       writeln;
       inc(contador);
