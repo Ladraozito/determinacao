@@ -1,13 +1,12 @@
 {%RunCommand gnome-terminal -e $(TargetFile)}
 program laplace;
 uses crt;
-  const
-    MaxI = 5;
-    MaxJ = 5;
-  var
-    Matr: array [1..MaxI,1..MaxJ] of integer;
-    I, J, Ipergunt, numI: integer;
-    {Ipergunt = pergunta qual linha o usuário quer "eliminar"}
+const
+  MaxI = 5;
+  MaxJ = 5;
+var
+  Matr: array [1..MaxI,1..MaxJ] of integer;
+  I, J, Ipergunt, numI: integer;
 begin
   numI:= 0;
   for I:= 1 to MaxI do
@@ -16,8 +15,8 @@ begin
         begin
           Matr[I,J]:= random(MaxI * MaxJ);
           write(Matr[I,J],' ');
-            if J = MaxJ then
-              write(Matr[I,J],' |Linha .',numI);
+          if J = MaxJ then
+            write(Matr[I,J],' |Linha .',numI);
         end;
       writeln;
       inc(numI);
