@@ -4,22 +4,23 @@ Programa escrito em Pascal para calcular determinantes de matrizes com ordem mai
 ## Instruções
 
 ### Crie uma branch
-`git branch nome-do-branch`
+    git branch nome-do-branch
 
-`git checkout nome-do-branch`
+    git checkout nome-do-branch
 
 ### Envie as modificações
-`git add .`
+    git add .
 
-`git commit -m "resume as alterações"`
+    git commit -m "resume as alterações"
 
-`git push origin nome-do-branch`
+    git push origin nome-do-branch
 
-Quem sabe mais sobre Git, sabe, quem não sabe, não sabe
-Quem sabe executar Pascal no Linux, sabe, quem não sabe, não sabe
+Quem sabe mais sobre Git, sabe, quem não sabe, não sabe.
+
+Quem sabe executar Pascal no Linux, sabe, quem não sabe, não sabe.
 :)
 
-## Laplace
+## Utilizando a regra de Laplace
 Considere:
 
 |||||
@@ -72,4 +73,5 @@ Lembre-se que estamos resolvendo aqui:
     (3 * C11) + (1 * C12) + (0 * C13) + (1 * C14)
     
 Isso é o suficiente para resolver o determinante da matriz proposta.
-Nesse caso, a resposta deve ser **34**.
+
+Nesse caso, a resposta deve ser 34.
