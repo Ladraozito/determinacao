@@ -4,28 +4,28 @@ uses crt;
 const
   Max = 4;
 var
-  Matr: array [1..Max,1..Max] of integer;
-  I, J, Ipergunt, numI: integer;
+  Matriz: array [1..Max,1..Max] of integer;
+  linha, coluna, escolhida, contador: integer;
 begin
-  numI:= 0;
-  for I:= 1 to Max do
+  contador := 0;
+  for linha := 1 to Max do
     begin
-      for J:= 1 to Max do
+      for coluna := 1 to Max do
         begin
-          Matr[I,J]:= random(Max * Max);
-          write(Matr[I,J],' ');
-          if J = Max then
-            write(Matr[I,J],' |Linha .',numI);
+          Matriz[linha, coluna] := random(Max * Max);
+          write(Matriz[linha, coluna],' ');
+          if coluna = Max then
+            write(Matriz[linha, coluna],' |Linha .',contador);
         end;
       writeln;
-      inc(numI);
+      inc(contador);
     end;
   writeln;
   writeln('Escolha uma linha qualquer da matriz para comecar o calculo: ');
   writeln('Ex: "2" = Linha 2');
-  readln(Ipergunt);
+  readln(escolhida);
   clrscr;
-  writeln('Voce escolheu a linha ', Ipergunt);
+  writeln('Voce escolheu a linha ', escolhida);
   readln;
 end.
 
