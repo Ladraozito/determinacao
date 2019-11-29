@@ -43,7 +43,7 @@ A<sub>11</sub> = (-1)<sup>1+1</sup> * D<sub>ij</sub>
 A<sub>11</sub> = (-1)<sup>2</sup> * D<sub>ij</sub>  
 A<sub>11</sub> = 1 * D<sub>ij</sub>**
 
-Calcule o menor complementar. Elimine as filas `ij` da matriz e deixe o que sobrou:
+Calcule o menor complementar. Elimine as filas **ij** da matriz e deixe o que sobrou:
 
     D11 = [-1, 3, 4
             1, 0, 2
@@ -53,9 +53,9 @@ Calcule o menor complementar. Elimine as filas `ij` da matriz e deixe o que sobr
 
 Para calcular o determinante da matriz resultante é necessário utilizar Laplace em cada uma das matrizes até dar uma matriz 1x1, ou quando chegar em uma matriz 3x3 pode ser usado **Sarrus** para achar o determinantes das matrizes resultantes.
 
-     D11 = | -1, 3,  4 | -1 3
-           |  1, 0,  2 |  1 0
-           |  1, 1, -1 |  1 1
+    D11 = | -1, 3,  4 | -1 3
+          |  1, 0,  2 |  1 0
+          |  1, 1, -1 |  1 1
 
     D11 = (0 + 6 + 4) - (0 - 2 - 3)
     D11 = 10 - (-5)
@@ -65,7 +65,7 @@ Para calcular o determinante da matriz resultante é necessário utilizar Laplac
 
 Lembre-se que estamos resolvendo aqui:
 
-    (3 * C11) + (1 * C12) + (0 * C13) + (1 * C14)
+    (3 * A11) + (1 * A12) + (0 * A13) + (1 * A14)
 
 Isso é o suficiente para resolver o determinante da matriz proposta.
 
