@@ -5,13 +5,13 @@ const
     max = 4;
 
 var
-    mat : array[1..max, 1..max] of integer;
+    Matriz : array[1..max, 1..max] of integer;
     firstLine , exponenciation, sarrus, cofactor: array[1..max] of integer;
     line, column, det : integer;
 
 begin
     { 1. Criar a Matriz }
-    writeln('Type the 4x4 matrix!');
+    writeln('Digite a Matriz 4x4!');
     for line := 1 to max do
         for column := 1 to max do
             begin
@@ -73,5 +73,5 @@ begin
            (firstLine[4] * cofactor[4]);
 
     { 9. Mostrar o determinante }
-    writeln('Determinant: ', det);
+    writeln('Determinante: ', det);
 end.
