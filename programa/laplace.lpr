@@ -68,9 +68,9 @@ begin
 
     { 7-8. Calcular o determinante }
     determinante := (primeiraLinha[1] * cofator[1]) + 
-           (primeiraLinha[2] * cofator[2]) + 
-           (primeiraLinha[3] * cofator[3]) + 
-           (primeiraLinha[4] * cofator[4]);
+                    (primeiraLinha[2] * cofator[2]) + 
+                    (primeiraLinha[3] * cofator[3]) + 
+                    (primeiraLinha[4] * cofator[4]);
 
     { 9. Mostrar o determinante }
     writeln('Determinante: ', determinante);
