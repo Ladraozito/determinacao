@@ -1,6 +1,6 @@
 # Determinantes
 
-Programa escrito em Pascal para calcular determinantes de matrizes com ordem maior do que 3, utilizando a regra de Laplace.
+Programa escrito em Pascal para calcular determinantes de matrizes com ordem maior do que 3, utilizando o **Teorema de Laplace**.
 
 ## Instruções
 
@@ -32,18 +32,16 @@ Escolha uma linha ou coluna:
 
     [3, 1, 0, 1]
 
-Multiplique e some cada elemento pelo seu cofator **a<sub>ij</sub> * C<sub>ij</sub>**:
+Multiplique e some cada elemento pelo seu cofator **a<sub>ij</sub> * A<sub>ij</sub>** sendo **a<sub>ij</sub>** o elemento da matriz e **A<sub>ij</sub>** o cofator de um elemento **a<sub>ij</sub>**:
 
-    (3 * C11) + (1 * C12) + (0 * C13) + (1 * C14)
+**(3 * A<sub>11</sub>) + (1 * A<sub>12</sub>) + (0 * A<sub>13</sub>) + (1 * A<sub>14</sub>)**
 
-Calcule o cofator pela mutliplicação da exponenciação e do menor complementar `Power(-1, i+j) * Dij`:
+Calcule o cofator pela mutliplicação da exponenciação e do menor complementar **(-1)<sup>i+j</sup> * D<sub>ij</sub>** sendo **D<sub>ij</sub>** o determinante da matriz resultante da eliminação da linha *i* e da coluna *j*:
 
-    C11 = Power(-1, i+j) * Dij
-    C11 = Power(-1, 1+1) * D11
-    C11 = Power(-1, 2) * D11
-    C11 = 1 * D11
-
-    ...
+**A<sub>11</sub> = (-1)<sup>i+j</sup> * D<sub>ij</sub>  
+A<sub>11</sub> = (-1)<sup>1+1</sup> * D<sub>ij</sub>  
+A<sub>11</sub> = (-1)<sup>2</sup> * D<sub>ij</sub>  
+A<sub>11</sub> = 1 * D<sub>ij</sub>**
 
 Calcule o menor complementar. Elimine as filas `ij` da matriz e deixe o que sobrou:
 
@@ -53,7 +51,7 @@ Calcule o menor complementar. Elimine as filas `ij` da matriz e deixe o que sobr
 
     ...
 
-Agora é necessário aplicar a regra de `Sarrus`, duplicando as duas primeiras colunas e multiplicando daquele jeitinho lá :)
+Para calcular o determinante da matriz resultante é necessário utilizar Laplace em cada uma das matrizes até dar uma matriz 1x1, ou quando chegar em uma matriz 3x3 pode ser usado **Sarrus** para achar o determinantes de matriz resultante.
 
      D11 = | -1, 3,  4 | -1 3
            |  1, 0,  2 |  1 0
