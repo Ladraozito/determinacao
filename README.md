@@ -27,12 +27,11 @@ Quem sabe executar Pascal no Linux, sabe, quem não sabe, não sabe.
 
 Considere:
 
-|||||
---- | --- | --- | ---
 3 | 1 | 0 | 1
-0 | -1 | 3 | 4
-1 | 1 | 0 | 2
-0 | 1 | 1 | -1
+--- | --- | --- | ---
+**0** | **-1** | **3** | **4**
+**1** | **1** | **0** | **2**
+**0** | **1** | **1** | **-1**
 
 Escolha uma linha ou coluna:
 
