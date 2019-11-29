@@ -8,17 +8,30 @@ var
     Matriz : array[1..max, 1..max] of integer;
     primeiraLinha , expoente, sarrus, cofator: array[1..max] of integer;
     linha, coluna, determinante : integer;
+    resposta : Char;
 
 begin
     { 1. Criar a Matriz }
-    writeln('Digite a Matriz 4x4!');
-    for linha := 1 to max do
-        for coluna := 1 to max do
-            begin
-                write('[', linha, coluna, ']: ');
-                readln(Matriz[linha, coluna])
-            end;
+    Write('Deseja inserir os numeros da Matriz? [S/N]: ');
+    ReadLn(resposta);
 
+    if resposta = 'S' then
+        begin
+            writeln('Digite a Matriz 4x4!');
+            for linha := 1 to max do
+                for coluna := 1 to max do
+                    begin
+                        write('[', linha, coluna, ']: ');
+                        readln(Matriz[linha, coluna])
+                    end;
+        end
+    else
+        begin
+          randomize;
+          for linha := 1 to Max do
+            for coluna := 1 to max do
+              matriz[linha, coluna] := Random(10);
+        end;
     { 2. Pegar valores da primeira linha }
     for linha := 1 to max do
         primeiraLinha[linha] := Matriz[1, linha];
