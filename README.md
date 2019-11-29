@@ -32,7 +32,7 @@ Escolha uma linha ou coluna:
 
     [3, 1, 0, 1]
 
-Multiplique e some cada elemento pelo seu cofator `ij * Cij`:
+Multiplique e some cada elemento pelo seu cofator **a<sub>ij</sub> * C<sub>ij</sub>**:
 
     (3 * C11) + (1 * C12) + (0 * C13) + (1 * C14)
 
