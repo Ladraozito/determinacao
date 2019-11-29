@@ -19,20 +19,20 @@ begin
   if resposta in ['S', 's'] then
     begin
       writeln('Digite a Matriz 4x4!');
-        for linha := 1 to max do
-          for coluna := 1 to max do
-            begin
-              write('[', linha, coluna, ']: ');
-              readln(Matriz[linha, coluna])
-            end;
+      for linha := 1 to max do
+        for coluna := 1 to max do
+          begin
+            write('[', linha, coluna, ']: ');
+            readln(Matriz[linha, coluna])
+          end;
     end
-    else
-      begin
-        randomize;
-          for linha := 1 to Max do
-            for coluna := 1 to max do
-              matriz[linha, coluna] := Random(10);
-      end;
+  else
+    begin
+      randomize;
+      for linha := 1 to Max do
+        for coluna := 1 to max do
+          matriz[linha, coluna] := Random(10);
+    end;
 
   WriteLn('Eis aqui a sua Matriz: ');
   for linha := 1 to max do
