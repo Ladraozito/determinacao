@@ -32,7 +32,7 @@ Escolha uma linha ou coluna:
 
     [3, 1, 0, 1]
 
-Multiplique e some cada elemento pelo seu cofator **a<sub>ij</sub> * A<sub>ij</sub>** sendo **a<sub>ij</sub>** o elemento da matriz e **A<sub>ij</sub>** o cofator de um elemento **a<sub>ij</sub>**:
+Faça a somatória do produto de cada elemento pelo seu cofator **a<sub>ij</sub> * A<sub>ij</sub>** sendo **a<sub>ij</sub>** o elemento da matriz e **A<sub>ij</sub>** o cofator de um elemento **a<sub>ij</sub>**:
 
 **(3 * A<sub>11</sub>) + (1 * A<sub>12</sub>) + (0 * A<sub>13</sub>) + (1 * A<sub>14</sub>)**
 
@@ -65,7 +65,7 @@ Para calcular o determinante da matriz resultante é necessário utilizar Laplac
 
 Lembre-se que estamos resolvendo aqui:
 
-    (3 * A11) + (1 * A12) + (0 * A13) + (1 * A14)
+**(3 * A<sub>11</sub>) + (1 * A<sub>12</sub>) + (0 * A<sub>13</sub>) + (1 * A<sub>14</sub>)**
 
 Isso é o suficiente para resolver o determinante da matriz proposta.
 
