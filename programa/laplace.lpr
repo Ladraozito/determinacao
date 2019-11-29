@@ -1,27 +1,30 @@
 program laplace;
 uses math;
 
+const
+    max = 4;
+
 var
-    mat : array[1..4, 1..4] of integer;
-    firstLine , exponenciation, sarrus, cofactor: array[1..4] of integer;
+    mat : array[1..max, 1..max] of integer;
+    firstLine , exponenciation, sarrus, cofactor: array[1..max] of integer;
     line, column, det : integer;
 
 begin
     { 1. Criar a Matriz }
     writeln('Type the 4x4 matrix!');
-    for line := 1 to 4 do
-        for column := 1 to 4 do
+    for line := 1 to max do
+        for column := 1 to max do
             begin
                 write('[', line, column, ']: ');
                 readln(mat[line, column])
             end;
 
     { 2. Pegar valores da primeira linha }
-    for line := 1 to 4 do
+    for line := 1 to max do
         firstLine[line] := mat[1, line];
 
     { 3. Criar os valores da exponenciação da primeira linha }
-    for line := 1 to 4 do
+    for line := 1 to max do
         exponenciation[line] := Round(Power(-1, line + 1));
 
     { 4-5. Pegar valores e calcular Sarrus }
