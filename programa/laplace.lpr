@@ -15,7 +15,7 @@ begin
     Write('Deseja inserir os numeros da Matriz? [S/N]: ');
     ReadLn(resposta);
 
-    if resposta = 'S' then
+    if resposta in ['S', 's'] then
         begin
             writeln('Digite a Matriz 4x4!');
             for linha := 1 to max do
