@@ -1,14 +1,17 @@
 # Determinantes
+
 Programa escrito em Pascal para calcular determinantes de matrizes com ordem maior do que 3, utilizando a regra de Laplace.
 
 ## Instruções
 
 ### Crie uma branch
+
     git branch nome-do-branch
 
     git checkout nome-do-branch
 
 ### Envie as modificações
+
     git add .
 
     git commit -m "resume as alterações"
@@ -21,6 +24,7 @@ Quem sabe executar Pascal no Linux, sabe, quem não sabe, não sabe.
 :)
 
 ## Utilizando a regra de Laplace
+
 Considere:
 
 |||||
@@ -30,13 +34,12 @@ Considere:
 1 | 1 | 0 | 2
 0 | 1 | 1 | -1
 
+Escolha uma linha ou coluna:
 
-Escolha uma linha ou coluna: 
-    
     [3, 1, 0, 1]
 
 Multiplique e some cada elemento pelo seu cofator `ij * Cij`:
-    
+
     (3 * C11) + (1 * C12) + (0 * C13) + (1 * C14)
 
 Calcule o cofator pela mutliplicação da exponenciação e do menor complementar `Power(-1, i+j) * Dij`:
@@ -71,7 +74,7 @@ Agora é necessário aplicar a regra de `Sarrus`, duplicando as duas primeiras c
 Lembre-se que estamos resolvendo aqui:
 
     (3 * C11) + (1 * C12) + (0 * C13) + (1 * C14)
-    
+
 Isso é o suficiente para resolver o determinante da matriz proposta.
 
 Nesse caso, a resposta deve ser 34.
