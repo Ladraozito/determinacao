@@ -32,13 +32,13 @@ begin
             for coluna := 1 to max do
               matriz[linha, coluna] := Random(10);
         end;
-    { 2. Pegar valores da primeira linha }
-    for linha := 1 to max do
-        primeiraLinha[linha] := Matriz[1, linha];
 
-    { 3. Criar os valores da exponenciação da primeira linha }
+    { 2-3. Pegar valores da primeira linha e cria os valores de exponenciação }
     for linha := 1 to max do
-        expoente[linha] := Round(Power(-1, linha + 1));
+        begin
+            primeiraLinha[linha] := Matriz[1, linha];
+            expoente[linha] := Round(Power(-1, linha + 1));
+        end;
 
     { 4-5. Pegar valores e calcular Sarrus }
     sarrus[1] := ((Matriz[2,2] * Matriz[3,3] * Matriz[4,4])  + 
