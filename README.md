@@ -18,11 +18,6 @@ Programa escrito em Pascal para calcular determinantes de matrizes com ordem mai
 
     git push origin nome-do-branch
 
-Quem sabe mais sobre Git, sabe, quem não sabe, não sabe.
-
-Quem sabe executar Pascal no Linux, sabe, quem não sabe, não sabe.
-:)
-
 ## Utilizando a regra de Laplace
 
 Considere:
