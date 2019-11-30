@@ -51,19 +51,7 @@ Calcule o menor complementar. Elimine as filas **ij** da matriz e deixe o que so
 
     ...
 
-Para calcular o determinante da matriz resultante é necessário utilizar Laplace em cada uma das matrizes até dar uma matriz 1x1, ou quando chegar em uma matriz 3x3 pode ser usado **Sarrus** para achar o determinantes das matrizes resultantes.
-
-    D11 = | -1, 3,  4 | -1 3
-          |  1, 0,  2 |  1 0
-          |  1, 1, -1 |  1 1
-
-    D11 = (0 + 6 + 4) - (0 - 2 - 3)
-    D11 = 10 - (-5)
-    D11 = 15
-
-    ...
-
-Lembre-se que estamos resolvendo aqui:
+Para calcular o determinante do menor complementar é necessário utilizar Laplace em cada uma das matrizes até dar uma matriz 1x1. Lembre-se que estamos resolvendo aqui:
 
 **(3 * A<sub>11</sub>) + (1 * A<sub>12</sub>) + (0 * A<sub>13</sub>) + (1 * A<sub>14</sub>)**
 
