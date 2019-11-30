@@ -63,17 +63,16 @@ function determinar(matriz : minhaMatriz; tamanho : Integer): integer;
   end;
 
 begin
-  { 1. Criar a Matriz }
   Write('Deseja inserir os numeros da Matriz? [S/N]: ');
   ReadLn(resposta);
 
   if resposta in ['S', 's'] then
     begin
-      writeln('Digite a Matriz 4x4!');
+      writeln('Digite a Matriz de ordem ', max);
       for linha := 1 to max do
         for coluna := 1 to max do
           begin
-            write('[', linha, coluna, ']: ');
+            write('[', linha, ', ', coluna, ']: ');
             readln(Matriz[linha, coluna])
           end;
     end
@@ -87,12 +86,15 @@ begin
 
   clrscr;
   WriteLn('Eis aqui a sua Matriz: ');
+
+  WriteLn;
   for linha := 1 to max do
     begin
       for coluna := 1 to max do
         write(matriz[linha, coluna]:3);
         WriteLn;
     end;
+  WriteLn;
 
   determinante := determinar(Matriz, max);
   writeln('Determinante: ', determinante);
