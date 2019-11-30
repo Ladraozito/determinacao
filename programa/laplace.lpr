@@ -2,14 +2,13 @@ program laplace;
 
 uses math, crt;
 
-const max = 4;
+const max = 5;
 
 type minhaMatriz = array[1..max, 1..max] of Integer;
 
 var
   Matriz : minhaMatriz;
-  primeiraLinha , expoente, sarrus, cofator: array[1..max] of integer;
-  linha, coluna, determinante, resultante : integer;
+  linha, coluna, determinante : integer;
   resposta : Char;
 
 function determinar(matriz : minhaMatriz; tamanho : Integer): integer; forward;
@@ -21,7 +20,6 @@ function menorComplementar(matriz: minhaMatriz; linha, coluna, tamanho: integer)
   begin
     linhaNova := 1;
     colunaNova := 1;
-    Write('(', linha, ', ', coluna, ', ', tamanho, ')', ' { ');
     for linhaVelha := 1 to tamanho do
       begin
         for colunaVelha := 1 to tamanho do
@@ -29,7 +27,6 @@ function menorComplementar(matriz: minhaMatriz; linha, coluna, tamanho: integer)
             if (linhaVelha <> linha) and (colunaVelha <> coluna) then
               begin
                 novaMatriz[linhaNova, colunaNova] := matriz[linhaVelha, colunaVelha];
-                Write('(', linhaNova, ', ', colunaNova, ')', '[', linhaVelha, ', ', colunaVelha, '] ');
                 Inc(colunaNova);
                 if colunaNova = tamanho then
                   begin
@@ -39,7 +36,6 @@ function menorComplementar(matriz: minhaMatriz; linha, coluna, tamanho: integer)
               end
           end;
       end;
-    WriteLn('}');
     menorComplementar := novaMatriz;
   end;
 
@@ -89,6 +85,7 @@ begin
           matriz[linha, coluna] := Random(10);
     end;
 
+  clrscr;
   WriteLn('Eis aqui a sua Matriz: ');
   for linha := 1 to max do
     begin
@@ -97,61 +94,6 @@ begin
         WriteLn;
     end;
 
-  { 2-3. Pegar valores da primeira linha e cria os valores de exponenciação }
-  for linha := 1 to max do
-    begin
-      primeiraLinha[linha] := Matriz[1, linha];
-      expoente[linha] := Round(Power(-1, linha + 1));
-    end;
-
-  resultante := determinar(Matriz, max);
-  WriteLn(resultante);
-
-  { 4-5. Pegar valores e calcular Sarrus }
-  sarrus[1] := ((Matriz[2,2] * Matriz[3,3] * Matriz[4,4])  +
-                (Matriz[2,3] * Matriz[3,4] * Matriz[4,2])  +
-                (Matriz[2,4] * Matriz[3,2] * Matriz[4,3])) -
-
-               ((Matriz[2,4] * Matriz[3,3] * Matriz[4,2])  +
-                (Matriz[2,2] * Matriz[3,4] * Matriz[4,3])  +
-                (Matriz[2,3] * Matriz[3,2] * Matriz[4,4])) ;
-
-  sarrus[2] := ((Matriz[2,1] * Matriz[3,3] * Matriz[4,4])  +
-                (Matriz[2,3] * Matriz[3,4] * Matriz[4,1])  +
-                (Matriz[2,4] * Matriz[3,1] * Matriz[4,3])) -
-
-               ((Matriz[2,4] * Matriz[3,3] * Matriz[4,1])  +
-                (Matriz[2,1] * Matriz[3,4] * Matriz[4,3])  +
-                (Matriz[2,3] * Matriz[3,1] * Matriz[4,4])) ;
-
-  sarrus[3] := ((Matriz[2,1] * Matriz[3,2] * Matriz[4,4])  +
-                (Matriz[2,2] * Matriz[3,4] * Matriz[4,1])  +
-                (Matriz[2,4] * Matriz[3,1] * Matriz[4,2])) -
-
-               ((Matriz[2,4] * Matriz[3,2] * Matriz[4,1])  +
-                (Matriz[2,1] * Matriz[3,4] * Matriz[4,2])  +
-                (Matriz[2,2] * Matriz[3,1] * Matriz[4,4])) ;
-
-  sarrus[4] := ((Matriz[2,1] * Matriz[3,2] * Matriz[4,3])  +
-                (Matriz[2,2] * Matriz[3,3] * Matriz[4,1])  +
-                (Matriz[2,3] * Matriz[3,1] * Matriz[4,2])) -
-
-               ((Matriz[2,3] * Matriz[3,2] * Matriz[4,1])  +
-                (Matriz[2,1] * Matriz[3,3] * Matriz[4,2])  +
-                (Matriz[2,2] * Matriz[3,1] * Matriz[4,3])) ;
-
-  { 6. Calcular o cofator }
-  cofator[1] := expoente[1] * sarrus[1];
-  cofator[2] := expoente[2] * sarrus[2];
-  cofator[3] := expoente[3] * sarrus[3];
-  cofator[4] := expoente[4] * sarrus[4];
-
-  { 7-8. Calcular o determinante }
-  determinante := (primeiraLinha[1] * cofator[1]) +
-                  (primeiraLinha[2] * cofator[2]) +
-                  (primeiraLinha[3] * cofator[3]) +
-                  (primeiraLinha[4] * cofator[4]);
-
-  { 9. Mostrar o determinante }
+  determinante := determinar(Matriz, max);
   writeln('Determinante: ', determinante);
 end.
