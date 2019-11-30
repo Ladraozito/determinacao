@@ -21,6 +21,7 @@ function menorComplementar(matriz: minhaMatriz; linha, coluna, tamanho: integer)
   begin
     linhaNova := 1;
     colunaNova := 1;
+    Write('(', linha, ', ', coluna, ', ', tamanho, ')', ' { ');
     for linhaVelha := 1 to tamanho do
       begin
         for colunaVelha := 1 to tamanho do
@@ -28,18 +29,17 @@ function menorComplementar(matriz: minhaMatriz; linha, coluna, tamanho: integer)
             if (linhaVelha <> linha) and (colunaVelha <> coluna) then
               begin
                 novaMatriz[linhaNova, colunaNova] := matriz[linhaVelha, colunaVelha];
-                if linhaVelha <> linha then
-                  Inc(linhaNova);
-                if colunaNova <> coluna then
-                  Inc(colunaNova);
-                if linhaNova = tamanho then
-                    linhaNova := 1;
+                Write('(', linhaNova, ', ', colunaNova, ')', '[', linhaVelha, ', ', colunaVelha, '] ');
+                Inc(colunaNova);
                 if colunaNova = tamanho then
+                  begin
                     colunaNova := 1;
-                Write('[', linhaNova, ', ', colunaNova, ']')
+                    Inc(linhaNova)
+                  end;
               end
           end;
       end;
+    WriteLn('}');
     menorComplementar := novaMatriz;
   end;
 
