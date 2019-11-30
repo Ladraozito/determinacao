@@ -2,13 +2,11 @@ program laplace;
 
 uses math, crt;
 
-const max = 5;
-
-type minhaMatriz = array[1..max, 1..max] of Integer;
+type minhaMatriz = array of array of Integer;
 
 var
   Matriz : minhaMatriz;
-  linha, coluna, determinante : integer;
+  linha, coluna, determinante, max: integer;
   resposta : Char;
 
 function determinar(matriz : minhaMatriz; tamanho : Integer): integer; forward;
@@ -18,11 +16,14 @@ function menorComplementar(matriz: minhaMatriz; linha, coluna, tamanho: integer)
     novaMatriz: minhaMatriz;
     linhaVelha, colunaVelha, linhaNova, colunaNova: Integer;
   begin
-    linhaNova := 1;
-    colunaNova := 1;
-    for linhaVelha := 1 to tamanho do
+    SetLength(novaMatriz, tamanho + 1);
+    for linhaNova := 0 to tamanho + 1 do
+      SetLength(novaMatriz[linhaNova], tamanho+1);
+    linhaNova := 0;
+    colunaNova := 0;
+    for linhaVelha := 0 to tamanho do
       begin
-        for colunaVelha := 1 to tamanho do
+        for colunaVelha := 0 to tamanho do
           begin
             if (linhaVelha <> linha) and (colunaVelha <> coluna) then
               begin
@@ -30,7 +31,7 @@ function menorComplementar(matriz: minhaMatriz; linha, coluna, tamanho: integer)
                 Inc(colunaNova);
                 if colunaNova = tamanho then
                   begin
-                    colunaNova := 1;
+                    colunaNova := 0;
                     Inc(linhaNova)
                   end;
               end
@@ -48,39 +49,46 @@ function determinar(matriz : minhaMatriz; tamanho : Integer): integer;
   var
     coluna, resultado, cofatorado : Integer;
   begin
-    if tamanho = 1 then
-      determinar := matriz[1, 1]
+    if tamanho = 0 then
+      determinar := matriz[0, 0]
     else
       begin
         resultado := 0;
-        for coluna := 1 to tamanho do
+        for coluna := 0 to tamanho do
           begin
-            cofatorado := cofatorar(matriz, 1, coluna, tamanho);
-            resultado := resultado + (matriz[1][coluna] * cofatorado)
+            cofatorado := cofatorar(matriz, 0, coluna, tamanho);
+            resultado := resultado + (matriz[0][coluna] * cofatorado)
           end;
         determinar := resultado
       end;
   end;
 
 begin
+  Write('Qual a ordem da Matriz? ');
+  ReadLn(Max);
+  SetLength(Matriz, max);
+  for linha := 0 to max-1 do
+    SetLength(Matriz[linha], max);
+  max := max-1;
+
   Write('Deseja inserir os numeros da Matriz? [S/N]: ');
   ReadLn(resposta);
 
   if resposta in ['S', 's'] then
     begin
       writeln('Digite a Matriz de ordem ', max);
-      for linha := 1 to max do
-        for coluna := 1 to max do
+      for linha := 0 to max do
+        for coluna := 0 to max do
           begin
-            write('[', linha, ', ', coluna, ']: ');
+            write('[', linha+1, ', ', coluna+1, ']: ');
             readln(Matriz[linha, coluna])
           end;
     end
   else
     begin
       randomize;
-      for linha := 1 to Max do
-        for coluna := 1 to max do
+      for linha := 0 to Max do
+        for coluna := 0 to max do
           matriz[linha, coluna] := Random(10);
     end;
 
@@ -88,9 +96,9 @@ begin
   WriteLn('Eis aqui a sua Matriz: ');
 
   WriteLn;
-  for linha := 1 to max do
+  for linha := 0 to max do
     begin
-      for coluna := 1 to max do
+      for coluna := 0 to max do
         write(matriz[linha, coluna]:3);
         WriteLn;
     end;
@@ -98,4 +106,5 @@ begin
 
   determinante := determinar(Matriz, max);
   writeln('Determinante: ', determinante);
+  readln;
 end.
