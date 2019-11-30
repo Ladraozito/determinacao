@@ -2,14 +2,23 @@ program laplace;
 
 uses math, crt;
 
-const
-  max = 4;
+const max = 4;
+
+type minhaMatriz = array[1..max, 1..max] of Integer;
 
 var
-  Matriz : array[1..max, 1..max] of integer;
+  Matriz : minhaMatriz;
   primeiraLinha , expoente, sarrus, cofator: array[1..max] of integer;
   linha, coluna, determinante : integer;
   resposta : Char;
+
+function determinar(var matriz: minhaMatriz): integer;
+  var
+    coluna : Integer;
+  begin
+    for coluna in matriz[1] do
+      write(coluna)
+  end;
 
 begin
   { 1. Criar a Matriz }
@@ -48,6 +57,7 @@ begin
       primeiraLinha[linha] := Matriz[1, linha];
       expoente[linha] := Round(Power(-1, linha + 1));
     end;
+  determinar(Matriz);
 
   { 4-5. Pegar valores e calcular Sarrus }
   sarrus[1] := ((Matriz[2,2] * Matriz[3,3] * Matriz[4,4])  +
