@@ -14,9 +14,38 @@ var
 
 function determinar(matriz : minhaMatriz; tamanho : Integer): integer; forward;
 
+function menorComplementar(matriz: minhaMatriz; linha, coluna, tamanho: integer): minhaMatriz;
+  var
+    novaMatriz: minhaMatriz;
+    linhaVelha, colunaVelha, linhaNova, colunaNova: Integer;
+  begin
+    linhaNova := 1;
+    colunaNova := 1;
+    for linhaVelha := 1 to tamanho do
+      begin
+        for colunaVelha := 1 to tamanho do
+          begin
+            if (linhaVelha <> linha) and (colunaVelha <> coluna) then
+              begin
+                novaMatriz[linhaNova, colunaNova] := matriz[linhaVelha, colunaVelha];
+                if linhaVelha <> linha then
+                  Inc(linhaNova);
+                if colunaNova <> coluna then
+                  Inc(colunaNova);
+                if linhaNova = tamanho then
+                    linhaNova := 1;
+                if colunaNova = tamanho then
+                    colunaNova := 1;
+                Write('[', linhaNova, ', ', colunaNova, ']')
+              end
+          end;
+      end;
+    menorComplementar := novaMatriz;
+  end;
+
 function cofatorar(matriz : minhaMatriz; linha, coluna, tamanho: Integer): Integer;
   begin
-    cofatorar := Round(Power(-1, linha + coluna)) * determinar(matriz, tamanho-1);
+    cofatorar := Round(Power(-1, linha + coluna)) * determinar(menorComplementar(matriz, linha, coluna, tamanho), tamanho-1);
   end;
 
 function determinar(matriz : minhaMatriz; tamanho : Integer): integer;
