@@ -9,15 +9,32 @@ type minhaMatriz = array[1..max, 1..max] of Integer;
 var
   Matriz : minhaMatriz;
   primeiraLinha , expoente, sarrus, cofator: array[1..max] of integer;
-  linha, coluna, determinante : integer;
+  linha, coluna, determinante, resultante : integer;
   resposta : Char;
 
-function determinar(var matriz: minhaMatriz): integer;
-  var
-    coluna : Integer;
+function determinar(matriz : minhaMatriz; tamanho : Integer): integer; forward;
+
+function cofatorar(matriz : minhaMatriz; linha, coluna, tamanho: Integer): Integer;
   begin
-    for coluna in matriz[1] do
-      write(coluna)
+    cofatorar := Round(Power(-1, linha + coluna)) * determinar(matriz, tamanho-1);
+  end;
+
+function determinar(matriz : minhaMatriz; tamanho : Integer): integer;
+  var
+    coluna, resultado, cofatorado : Integer;
+  begin
+    if tamanho = 1 then
+      determinar := matriz[1, 1]
+    else
+      begin
+        resultado := 0;
+        for coluna := 1 to tamanho do
+          begin
+            cofatorado := cofatorar(matriz, 1, coluna, tamanho);
+            resultado := resultado + (matriz[1][coluna] * cofatorado)
+          end;
+        determinar := resultado
+      end;
   end;
 
 begin
@@ -57,7 +74,9 @@ begin
       primeiraLinha[linha] := Matriz[1, linha];
       expoente[linha] := Round(Power(-1, linha + 1));
     end;
-  determinar(Matriz);
+
+  resultante := determinar(Matriz, max);
+  WriteLn(resultante);
 
   { 4-5. Pegar valores e calcular Sarrus }
   sarrus[1] := ((Matriz[2,2] * Matriz[3,3] * Matriz[4,4])  +
