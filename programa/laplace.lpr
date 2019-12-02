@@ -76,7 +76,7 @@ begin
 
   if resposta in ['S', 's'] then
     begin
-      writeln('Digite a Matriz de ordem ', max);
+      writeln('Digite a Matriz de ordem ', max+1);
       for linha := 0 to max do
         for coluna := 0 to max do
           begin
