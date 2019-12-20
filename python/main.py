@@ -1,3 +1,6 @@
+import os
+
+
 def determinar(matriz):
     if len(matriz) == 1:
         return matriz[0][0]
@@ -29,10 +32,29 @@ def complementar(matriz, linha, coluna):
     return novaMatriz
 
 
-matriz = [[3,  1, 0,  1],
-          [0, -1, 3,  4],
-          [1,  1, 0,  2],
-          [0,  1, 1, -1]]
+tamanho = input('Informe o tamanho da matriz: ')
+while not tamanho.isdigit():
+    tamanho = input('Informe o tamanho da matriz: ')
+tamanho = int(tamanho)
 
+matriz = [[None for j in range(tamanho)] for i in range(tamanho)]
+
+print(f'Digite os elementos da matriz {tamanho}x{tamanho}:')
+for i in range(tamanho):
+    for j in range(tamanho):
+        while True:
+            elemento = input(f'[{i+1}][{j+1}]: ')
+            try:
+                int(elemento)
+            except ValueError:
+                pass
+            else:
+                break
+        matriz[i][j] = int(elemento)
+os.system('cls' if os.name == 'nt' else 'clear')
+
+print('Eis aqui a sua matriz:')
+for linha in matriz:
+    print(linha)
 determinante = determinar(matriz)
-print(determinante)
+print(f'Determinante: {determinante}')
