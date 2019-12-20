@@ -1,4 +1,5 @@
 import os
+import random
 
 
 def determinar(matriz):
@@ -38,23 +39,46 @@ while not tamanho.isdigit():
 tamanho = int(tamanho)
 
 matriz = [[None for j in range(tamanho)] for i in range(tamanho)]
+largura = 0
+escolha = input('Deseja digitar os elemento da matriz? [S/N]: ')
+if escolha in 'Ss':
+    print(f'Digite os elementos da matriz {tamanho}x{tamanho}:')
+    for i in range(tamanho):
+        for j in range(tamanho):
+            while True:
+                elemento = input(f'[{i+1}][{j+1}]: ')
+                try:
+                    int(elemento)
+                except ValueError:
+                    pass
+                else:
+                    break
+            matriz[i][j] = int(elemento)
+            if len(elemento) > largura:
+                largura = len(elemento)
+else:
+    for linha in range(tamanho):
+        for coluna in range(tamanho):
+            matriz[linha][coluna] = random.randint(-10, 10)
+            if len(str(matriz[linha][coluna])) > largura:
+                largura = len(str(matriz[linha][coluna]))
 
-print(f'Digite os elementos da matriz {tamanho}x{tamanho}:')
-for i in range(tamanho):
-    for j in range(tamanho):
-        while True:
-            elemento = input(f'[{i+1}][{j+1}]: ')
-            try:
-                int(elemento)
-            except ValueError:
-                pass
-            else:
-                break
-        matriz[i][j] = int(elemento)
 os.system('cls' if os.name == 'nt' else 'clear')
-
 print('Eis aqui a sua matriz:')
-for linha in matriz:
-    print(linha)
+
+string = '['
+for linha in range(tamanho):
+    string += '['
+    for coluna in range(tamanho):
+        string += f'{str(matriz[linha][coluna]):>{largura}}'
+        if coluna < tamanho-1:
+            string += ' '
+    if linha < tamanho-1:
+        string += ']\n '
+    else:
+        string += ']'
+string += ']'
+
+print(string)
 determinante = determinar(matriz)
 print(f'Determinante: {determinante}')
