@@ -1,6 +1,6 @@
 # Determinantes
 
-Programa escrito em Pascal para calcular determinantes de matrizes com ordem maior do que 3, utilizando o **Teorema de Laplace**.
+Programa escrito originalmente em Pascal para calcular determinantes de matrizes com ordem maior do que 3, utilizando o **Teorema de Laplace**.
 
 ## Instruções
 
